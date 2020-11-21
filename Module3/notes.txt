@@ -1,0 +1,7 @@
+Process: an execution context of a running program
+Process: a running instance of a computre program
+
+A process has system resources, a memory section, security attributes, process state.
+
+A thread is the smallest sequence of instructions that can be managed by the operating system. 
+The running threads are piced up by real threads from the thread pool.
