@@ -1,0 +1,14 @@
+
+Concurrency is the execution of multiple instruction sequences at the same time.
+In concurrent programming, the order of execution of these instrucion sequences should not have an effect on the outcome.
+
+The different executions should shared as less resources as possible.
+
+Two types exist in python:
+1. Paralell programming
+2. Async programming
+
+1. Is splitting a task into multiple ones and assigning them to different processor cores. This is good for cpu bound tasks. 
+2. For I/O bound operations async programming is best. It works by delegating a task to another actor and continue the work. 
+When the actor is finised, it calls a method that notifies the main thread that can handle the results from then on (callback function).
+In some languanges, instead of callback an object is created that represents the results of the task. 
