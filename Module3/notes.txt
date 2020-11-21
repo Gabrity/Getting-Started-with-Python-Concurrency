@@ -19,5 +19,11 @@ This is why threading could be preferred over multiprocessing. But it is dangero
 
 The solution: Thread synchronization
 The first goal is to reduce shared memory as much as possible. To avoid interference, locking is used. One thread can lock a resource, which can only be unlocked 
-by the same thread. If another thread tries to acquire that resource, it gets blocked.
+by the same thread. If another thread tries to acquire that resource, it gets blocked. This can be done with using locks. Locks are only needed for writing the resource.
 
+Other solution: semaphore - allows only a set of threads to access a shared resource, limiting their number.
+
+GIL: Global Interpreter Lock
+This reduces the number of threads to that can execute a certain code at the same time to one. In case of multithreading in reality what happens is that 
+only one thread is executed at the same time, but it is switching around quickly. This way it is not the most efficient to use multithreading for cpu bound operations.
+The solution is to use different interprater without GIL, like IronPython or to use multiprocessing instead. Multithreading is good for I/O operations.

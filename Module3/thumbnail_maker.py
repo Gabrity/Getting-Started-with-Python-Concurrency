@@ -16,14 +16,22 @@ class ThumbnailMakerService(object):
         self.home_dir = home_dir
         self.input_dir = self.home_dir + os.path.sep + 'incoming'
         self.output_dir = self.home_dir + os.path.sep + 'outgoing'
+        self.downloaded_bytes = 0.0
+        self.dl_lock = threading.Lock()
+        self.dl_semaphore = threading.Semaphore(4) # only 4 is allowed at the same time
 
     def download_image(self, img_url):
-        # download each image and save to the input dir 
-        img_filename = urlparse(img_url).path.split('/')[-1]
-        logging.info('dowloading image at URL ' + img_url)
-        urlretrieve(img_url, self.input_dir + os.path.sep + img_filename)
-        logging.info('dowloaded image from URL ' + img_url)
-        
+        with self.dl_semaphore:
+            # download each image and save to the input dir 
+            img_filename = urlparse(img_url).path.split('/')[-1]
+            logging.info('dowloading image at URL ' + img_url)
+            download_path = self.input_dir + os.path.sep + img_filename
+            urlretrieve(img_url, download_path)
+            img_size = os.path.getsize(download_path)
+            with self.dl_lock:
+                self.downloaded_bytes += img_size # this can be risky
+            logging.info('dowloaded image from URL ' + img_url)
+                
     def download_images(self, img_url_list):
         # validate inputs
         if not img_url_list:
