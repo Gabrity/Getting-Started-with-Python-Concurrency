@@ -8,6 +8,7 @@ from urllib.request import urlretrieve
 import PIL
 from PIL import Image
 
+
 logging.basicConfig(filename='logfile.log', level=logging.DEBUG)
 
 class ThumbnailMakerService(object):
