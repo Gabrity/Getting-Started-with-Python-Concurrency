@@ -10,3 +10,9 @@ INFO:root:downloaded 26 images in 30.746248499999993 seconds
 INFO:root:beginning image resizing
 INFO:root:created 26 thumbnails in 1.4485663999999758 seconds
 INFO:root:END make_thumbnails in 32.196324000000004 seconds
+INFO:root:START make_thumbnails
+INFO:root:beginning image downloads
+INFO:root:downloaded 26 images in 25.777471400000024 seconds
+INFO:root:beginning image resizing
+INFO:root:created 26 thumbnails in 1.5978430000000117 seconds
+INFO:root:END make_thumbnails in 27.37707750000004 seconds
