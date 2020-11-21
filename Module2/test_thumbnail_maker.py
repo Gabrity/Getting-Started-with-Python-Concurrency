@@ -28,7 +28,9 @@ IMG_URLS = \
      'https://dl.dropboxusercontent.com/s/l7ga4ea98hfl49b/pexels-photo-333529.jpeg',
      'https://dl.dropboxusercontent.com/s/rleff9tx000k19j/pexels-photo-341520.jpeg'
     ]
-    
+
+# run the content of this method
+# or run the test with pytest
 def test_thumbnail_maker():
     tn_maker = ThumbnailMakerService()
     tn_maker.make_thumbnails(IMG_URLS)

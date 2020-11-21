@@ -8,7 +8,6 @@ from urllib.request import urlretrieve
 import PIL
 from PIL import Image
 
-
 logging.basicConfig(filename='logfile.log', level=logging.DEBUG)
 
 class ThumbnailMakerService(object):
@@ -74,4 +73,3 @@ class ThumbnailMakerService(object):
 
         end = time.perf_counter()
         logging.info("END make_thumbnails in {} seconds".format(end - start))
-    

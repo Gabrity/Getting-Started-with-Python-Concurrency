@@ -1,0 +1,12 @@
+INFO:root:START make_thumbnails
+INFO:root:beginning image downloads
+INFO:root:downloaded 26 images in 30.788801000000035 seconds
+INFO:root:beginning image resizing
+INFO:root:created 26 thumbnails in 1.4369315000000142 seconds
+INFO:root:END make_thumbnails in 32.22723440000004 seconds
+INFO:root:START make_thumbnails
+INFO:root:beginning image downloads
+INFO:root:downloaded 26 images in 30.746248499999993 seconds
+INFO:root:beginning image resizing
+INFO:root:created 26 thumbnails in 1.4485663999999758 seconds
+INFO:root:END make_thumbnails in 32.196324000000004 seconds
