@@ -5,3 +5,19 @@ A process has system resources, a memory section, security attributes, process s
 
 A thread is the smallest sequence of instructions that can be managed by the operating system. 
 The running threads are piced up by real threads from the thread pool.
+
+
+Thread lifecycle:
+New => Ready => Running => Terminated
+         <= Blocked <=
+
+Each thread has its own register and stack space for performing its own calculation. This is independent.
+But threads within a process share a common memory space and common resources such as opened files. The OS used scheduler randomly switches between threads.
+
+Switching between threads in the same process is cheap, but switching to different process is expensive (context switch). 
+This is why threading could be preferred over multiprocessing. But it is dangerous as well because of thread interference (two processes updating the same memory)
+
+The solution: Thread synchronization
+The first goal is to reduce shared memory as much as possible. To avoid interference, locking is used. One thread can lock a resource, which can only be unlocked 
+by the same thread. If another thread tries to acquire that resource, it gets blocked.
+
