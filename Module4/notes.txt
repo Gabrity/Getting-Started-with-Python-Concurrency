@@ -1,0 +1,18 @@
+So far: process, threads, GIL
+
+In python, there is one interpreter per process. Cause of GIL, there can only be one thread.
+Solution: create a copy of the process wich have their own GILs, and so can run concurrently.
+Advantage: OS API for cotrolling processes: killing, less need for syncing, a failure in one process does not do as much damage
+Disadvantage: Higher memory need, more expensive context switches.
+
+API is almost the same as for threading. The arguments passed to the method must be serializable.
+
+Daemon process: when a process exists, it terminates its child processes. Except if they are deamon processes. Daemon processes cannot have children.
+There are two ways to control the the processes: is_alive() and terminate(). Possible problems with terminate:
+Shared resources may be put in an inconsistent state.
+Finally clauses and exit statements may not be run.
+
+It is harder to share data between processes. There are two possibilities: pipe, queue.
+It is similar to synchronize memory usage between processes, using lock, semaphore, etc.
+
+
