@@ -1,0 +1,7 @@
+Single threaded asynchrony is best for I/O and event driven development.
+Event loop: resposible for getting items from an event queue and handling it.
+
+AsyncIO future object = task
+Methods: cancel, done, result, exception, add_done_callback
+
+Task is a sublcass of Future
